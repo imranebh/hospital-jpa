@@ -1,0 +1,22 @@
+# Maven - exclude most of target but allow JAR files
+hospital/target/*
+!hospital/target/*.jar
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Other
+*.log
+*.tmp
