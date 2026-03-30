@@ -1,0 +1,19 @@
+services:
+  hospital-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hospital-jpa
+    ports:
+      - "8086:8086"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+      - JAVA_OPTS=-Xmx512m -Xms256m
+    networks:
+      - hospital-network
+    restart: unless-stopped
+    # Note: Before building, run: cd hospital && ./mvnw clean package -DskipTests
+
+networks:
+  hospital-network:
+    driver: bridge
